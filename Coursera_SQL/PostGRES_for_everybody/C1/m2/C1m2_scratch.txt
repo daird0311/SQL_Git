@@ -1,0 +1,46 @@
+first assignment
+task
+Create a table named automagic with the following fields:
+
+An id field that is an auto incrementing serial field.
+A name field that allows up to 32 characters but no more This field is required. (PostgreSQL Constraints)
+A height field that is a floating point number that is required.
+
+
+
+scratch
+CREATE TABLE automagic "add stuff here";
+###add columns####
+### add info re: the columns###
+INSERT INTO automagic "what you are adding";
+
+###columns###
+"id" field: autoincrementing serial (what is this)?
+
+"name" field: 32 characters MAX
+
+height field floating number
+
+
+Looking at Data Types • Text fields (small and large) • Binary fields (small and large) • Numeric fields • AUTO_INCREMENT fields
+
+AUTO_INCREMENT Often as we make multiple tables and need to JOIN them together we need an integer primary key for each row so we can efficiently add a reference to a row in some other table as a foreign key. DROP TABLE users; CREATE TABLE users ( id SERIAL, name VARCHAR(128), email VARCHAR(128) UNIQUE, PRIMARY KEY(id) );
+
+for auto increment you want “SERIAL”
+
+#### general structure ####
+CREATE TABLE “table” (expression)
+
+id SERIAL,
+#next parts
+next part is CHAR(n) or VARCHAR(32) #VARCHAR leaves it optional but maxes out at 32
+…
+id SERIAL,
+name VARCHAR(32),
+
+for float I was thinking either REAL or DOUBLE PRECISION (FLOAT maps to this)
+
+one thing missing (claude caught), need “NOT NULL”
+
+CREATE TABLE automagic ( id SERIAL, name VARCHAR(32) NOT NULL, height REAL NOT NULL );
+
